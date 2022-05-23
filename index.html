@@ -452,6 +452,9 @@ Greseli:0
 
 <script>
 
+let startTime;
+let endTime;
+let timeSpent;
 let series_length;
 let s;
 let currentSeries;
@@ -481,6 +484,11 @@ function setDefaultParams()
 
 function startAColorSeries(){
 
+	if(correctAnswers==0)
+	{
+	startTime=new Date();
+	console.log("Start time is:"+startTime);
+	}
 	document.getElementById('CoolResponseButtons').style.display="none";
 	document.getElementById('responseButtonWrapper').style.display="none";
 	var cnt=0;
@@ -698,6 +706,20 @@ document.getElementById('CoolResponseButtons').style.display="none";
 				after.setAttribute("class","after");
 				pyro.appendChild(before);
 				pyro.appendChild(after);
+				
+				endTime=new Date();
+				console.log("End time is:"+endTime);
+				timeSpent = new Date(endTime).getTime()-new Date(startTime).getTime();
+				var minutes = Math.floor(timeSpent / 60000);
+				var seconds = (timeSpent - minutes)/ 1000;
+				console.log("Time spent is:"+timeSpent);
+				let time=document.createElement("div");
+				let time_spent=document.createTextNode("Timp:"+minutes+" minute si "+seconds+" secunde.");
+				time.appendChild(time_spent);
+				finaldiv.appendChild(time);
+				
+				
+				
 				document.body.appendChild(finaldiv);
 				document.body.appendChild(pyro);
 				let finalaudio=document.createElement("audio");
@@ -706,11 +728,13 @@ document.getElementById('CoolResponseButtons').style.display="none";
 				finalaudio.type= 'audio/mpeg';
 				document.body.appendChild(finalaudio);
 				finalaudio.play();
+				
+				
 }
 
 function iquit()
 {	
-	
+	/*
 	document.getElementById('CoolResponseButtons').style.display="none";
 	document.getElementById('responseButtonWrapper').style.display="none";
 	document.getElementById('CoolButtons').style.display="none";
@@ -724,8 +748,11 @@ function iquit()
 	finaldiv.appendChild(br);
 	finaldiv.appendChild(mistakescount);
 	document.body.appendChild(finaldiv);
+	endTime=new Date().toLocaleTimeString();
+	timeSpent=endTime-startTime;
+	*/
+	displayEndScreen();
 	
-	//displayEndScreen();
 	
 	
 }
