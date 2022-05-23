@@ -710,15 +710,11 @@ document.getElementById('CoolResponseButtons').style.display="none";
 				endTime=new Date();
 				console.log("End time is:"+endTime);
 				timeSpent = new Date(endTime).getTime()-new Date(startTime).getTime();
-				var minutes = Math.floor(timeSpent / 60000);
-				var seconds = (timeSpent - minutes)/ 1000;
-				console.log("Time spent is:"+timeSpent);
 				let time=document.createElement("div");
-				let time_spent=document.createTextNode("Timp:"+minutes+" minute si "+seconds+" secunde.");
+				var minutes=timeSpent/60000;
+				let time_spent=document.createTextNode("Timp:"+minutes+"minute");
 				time.appendChild(time_spent);
 				finaldiv.appendChild(time);
-				
-				
 				
 				document.body.appendChild(finaldiv);
 				document.body.appendChild(pyro);
@@ -734,7 +730,7 @@ document.getElementById('CoolResponseButtons').style.display="none";
 
 function iquit()
 {	
-	/*
+	
 	document.getElementById('CoolResponseButtons').style.display="none";
 	document.getElementById('responseButtonWrapper').style.display="none";
 	document.getElementById('CoolButtons').style.display="none";
@@ -750,10 +746,6 @@ function iquit()
 	document.body.appendChild(finaldiv);
 	endTime=new Date().toLocaleTimeString();
 	timeSpent=endTime-startTime;
-	*/
-	displayEndScreen();
-	
-	
 	
 }
 
