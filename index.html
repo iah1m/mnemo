@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Many Buttons</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Very many buttons">
+  <meta name="author" content="Flanja Cosmin-Mihai">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+
+    body 
+	{
+	background-color: #1a1a1a;
+	max-height:90vmin;
+	max-width:90vmin;
+	min-height:90vmin;
+	min-width:90vmin;
+	color:white;
+	font-color:10vmin;
+	overflow:hidden;
+	}
+    
+	
+	#CoolButtons
+	{
+	min-height:50vmin;
+	min-width:50vmin;
+	max-height:50vmin;
+	max-width:50vmin;
+	position:absolute;
+	transform:translate(30%,10%);
+	left:30%;
+	display:grid;
+	grid-template: 1fr 1fr / 1fr 1fr;
+	grid-column-gap:3vmin;
+	grid-row-gap:1vmin;
+	padding:5px;
+	}
+	
+	#Menu
+	{
+	position:absolute;
+	transform:translate(10%,50%);
+	top:50%;
+	min-width:80vw;
+	max-width:80vw;
+	min-height:30vmin;
+	max-height:30vmin;
+	}
+	
+	#gameData
+	{
+	display:hidden;
+	}
+	
+	#CoolResponseButtons
+	{
+	max-width:22vmin;
+	min-width:22vmin;
+	min-height:22vmin;
+	max-height:22vmin;
+	grid-template:1fr 1fr / 1fr 1fr;
+	grid-gap:1.5vmin;
+	grid-row-gap:1.5vmin;
+	padding:2px;
+	float:right;
+	display:none;
+	}
+	
+	#responseButtonWrapper
+	{
+	max-width:12vmin;
+	min-width:12vmin;
+	min-height:12vmin;
+	max-height:12vmin;
+	float:right;
+	display:none;
+	}
+	
+	.gamebutton
+	{
+	min-width:20vmin;
+	max-width:20vmin;
+	max-height:20vmin;
+	min-height:20vmin;
+	padding:0.2vmin;
+	border:5px solid black;
+	
+	}
+	
+	.responsebutton
+	{
+	min-width:10vmin;
+	max-width:10vmin;
+	max-height:10vmin;
+	min-height:10vmin;
+	color:white;
+	border:1px solid black;
+	}
+	
+	#Rosu
+	{
+	background-color: #660000;
+	}
+	
+	#Albastru
+	{
+	background-color:#000066;
+	}
+	
+	#Galben
+	{
+	background-color:#666600;
+	}
+	
+	#Verde
+	{
+	background-color:#006600;
+	}
+	
+	#r_red
+	{
+	background-color: #660000;
+	}
+	
+	#r_blue
+	{
+	background-color:#000066;
+	}
+	
+	#r_yellow
+	{
+	background-color:#666600;
+	}
+	
+	#r_green
+	{
+	background-color:#006600;
+	}
+	
+	#startSeries
+	{
+	width:5vmin;
+	padding:0px;
+	}
+	
+	#currentStatus
+	{
+	
+	}
+	
+	#seriesNumber
+	{
+	width:3vmin;	
+	padding:0px;
+	text-align:center;
+	}
+	#seriesNumberLabel
+	{
+	width:5vmin;	
+	padding:0px;
+	}
+	
+	.seriesNumberLabel
+	{
+	width:5vmin;	
+	padding:0px;
+	font-size:1vmin;
+	}
+	
+	#GameStats
+	{
+	font-size:3vmin;
+	}
+	
+	#finaldiv
+	{
+	min-width:90vmin;
+	min-height:90vmin;
+	left:10%;
+	position:absolute;
+	font-size:8vmin;
+	}
+	
+	.pyro > .before, .pyro > .after {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: -120px -218.66667px blue, 248px -16.66667px #00ff84, 190px 16.33333px #002bff, -113px -308.66667px #ff009d, -109px -287.66667px #ffb300, -50px -313.66667px #ff006e, 226px -31.66667px #ff4000, 180px -351.66667px #ff00d0, -12px -338.66667px #00f6ff, 220px -388.66667px #99ff00, -69px -27.66667px #ff0400, -111px -339.66667px #6200ff, 155px -237.66667px #00ddff, -152px -380.66667px #00ffd0, -50px -37.66667px #00ffdd, -95px -175.66667px #a6ff00, -88px 10.33333px #0d00ff, 112px -309.66667px #005eff, 69px -415.66667px #ff00a6, 168px -100.66667px #ff004c, -244px 24.33333px #ff6600, 97px -325.66667px #ff0066, -211px -182.66667px #00ffa2, 236px -126.66667px #b700ff, 140px -196.66667px #9000ff, 125px -175.66667px #00bbff, 118px -381.66667px #ff002f, 144px -111.66667px #ffae00, 36px -78.66667px #f600ff, -63px -196.66667px #c800ff, -218px -227.66667px #d4ff00, -134px -377.66667px #ea00ff, -36px -412.66667px #ff00d4, 209px -106.66667px #00fff2, 91px -278.66667px #000dff, -22px -191.66667px #9dff00, 139px -392.66667px #a6ff00, 56px -2.66667px #0099ff, -156px -276.66667px #ea00ff, -163px -233.66667px #00fffb, -238px -346.66667px #00ff73, 62px -363.66667px #0088ff, 244px -170.66667px #0062ff, 224px -142.66667px #b300ff, 141px -208.66667px #9000ff, 211px -285.66667px #ff6600, 181px -128.66667px #1e00ff, 90px -123.66667px #c800ff, 189px 70.33333px #00ffc8, -18px -383.66667px #00ff33, 100px -6.66667px #ff008c;
+  -moz-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+  -webkit-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+  -o-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+  -ms-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+  animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards; }
+
+.pyro > .after {
+  -moz-animation-delay: 1.25s, 1.25s, 1.25s;
+  -webkit-animation-delay: 1.25s, 1.25s, 1.25s;
+  -o-animation-delay: 1.25s, 1.25s, 1.25s;
+  -ms-animation-delay: 1.25s, 1.25s, 1.25s;
+  animation-delay: 1.25s, 1.25s, 1.25s;
+  -moz-animation-duration: 1.25s, 1.25s, 6.25s;
+  -webkit-animation-duration: 1.25s, 1.25s, 6.25s;
+  -o-animation-duration: 1.25s, 1.25s, 6.25s;
+  -ms-animation-duration: 1.25s, 1.25s, 6.25s;
+  animation-duration: 1.25s, 1.25s, 6.25s; }
+
+@-webkit-keyframes bang {
+  from {
+    box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; } }
+@-moz-keyframes bang {
+  from {
+    box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; } }
+@-o-keyframes bang {
+  from {
+    box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; } }
+@-ms-keyframes bang {
+  from {
+    box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; } }
+@keyframes bang {
+  from {
+    box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; } }
+@-webkit-keyframes gravity {
+  to {
+    transform: translateY(200px);
+    -moz-transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+    -o-transform: translateY(200px);
+    -ms-transform: translateY(200px);
+    opacity: 0; } }
+@-moz-keyframes gravity {
+  to {
+    transform: translateY(200px);
+    -moz-transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+    -o-transform: translateY(200px);
+    -ms-transform: translateY(200px);
+    opacity: 0; } }
+@-o-keyframes gravity {
+  to {
+    transform: translateY(200px);
+    -moz-transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+    -o-transform: translateY(200px);
+    -ms-transform: translateY(200px);
+    opacity: 0; } }
+@-ms-keyframes gravity {
+  to {
+    transform: translateY(200px);
+    -moz-transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+    -o-transform: translateY(200px);
+    -ms-transform: translateY(200px);
+    opacity: 0; } }
+@keyframes gravity {
+  to {
+    transform: translateY(200px);
+    -moz-transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+    -o-transform: translateY(200px);
+    -ms-transform: translateY(200px);
+    opacity: 0; } }
+@-webkit-keyframes position {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%; }
+
+  20%, 39.9% {
+    margin-top: 40%;
+    margin-left: 30%; }
+
+  40%, 59.9% {
+    margin-top: 20%;
+    margin-left: 70%; }
+
+  60%, 79.9% {
+    margin-top: 30%;
+    margin-left: 20%; }
+
+  80%, 99.9% {
+    margin-top: 30%;
+    margin-left: 80%; } }
+@-moz-keyframes position {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%; }
+
+  20%, 39.9% {
+    margin-top: 40%;
+    margin-left: 30%; }
+
+  40%, 59.9% {
+    margin-top: 20%;
+    margin-left: 70%; }
+
+  60%, 79.9% {
+    margin-top: 30%;
+    margin-left: 20%; }
+
+  80%, 99.9% {
+    margin-top: 30%;
+    margin-left: 80%; } }
+@-o-keyframes position {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%; }
+
+  20%, 39.9% {
+    margin-top: 40%;
+    margin-left: 30%; }
+
+  40%, 59.9% {
+    margin-top: 20%;
+    margin-left: 70%; }
+
+  60%, 79.9% {
+    margin-top: 30%;
+    margin-left: 20%; }
+
+  80%, 99.9% {
+    margin-top: 30%;
+    margin-left: 80%; } }
+@-ms-keyframes position {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%; }
+
+  20%, 39.9% {
+    margin-top: 40%;
+    margin-left: 30%; }
+
+  40%, 59.9% {
+    margin-top: 20%;
+    margin-left: 70%; }
+
+  60%, 79.9% {
+    margin-top: 30%;
+    margin-left: 20%; }
+
+  80%, 99.9% {
+    margin-top: 30%;
+    margin-left: 80%; } }
+@keyframes position {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%; }
+
+  20%, 39.9% {
+    margin-top: 40%;
+    margin-left: 30%; }
+
+  40%, 59.9% {
+    margin-top: 20%;
+    margin-left: 70%; }
+
+  60%, 79.9% {
+    margin-top: 30%;
+    margin-left: 20%; }
+
+  80%, 99.9% {
+    margin-top: 30%;
+    margin-left: 80%; } }
+
+	
+	
+</style>
+
+</head>
+
+<body onload="setDefaultParams()">
+
+<div id="gameData">
+
+
+
+
+</div>
+
+<div id="CoolButtons">
+
+<button type="button" class="gamebutton" id="Rosu" onclick="RedButtonPressed()"></button>
+
+<button type="button" class="gamebutton" id="Galben" onclick="YellowButtonPressed()"></button>
+
+<button type="button" class="gamebutton" id="Verde" onclick="GreenButtonPressed()"></button>
+
+<button type="button" class="gamebutton" id="Albastru" onclick="BlueButtonPressed()"></button>
+
+</div>
+
+<div id="Menu">
+
+<div id="responseButtonWrapper">
+	<button type="button" id="response_button" onclick="displayResponseButtons()" style="font-size:3vmin">Doresc sa raspund!</button>
+</div>
+
+<div id="CoolResponseButtons">
+
+<button type="button" class="responsebutton" id="r_red" onclick="RedResponsePressed()"></button>
+
+<button type="button" class="responsebutton" id="r_yellow" onclick="YellowResponsePressed()"></button>
+
+<button type="button" class="responsebutton" id="r_green" onclick="GreenResponsePressed()"></button>
+
+<button type="button" class="responsebutton" id="r_blue" onclick="BlueResponsePressed()"></button>
+
+</div>
+
+
+
+<input type="button" id="startSeries" value="Start" onclick="startAColorSeries()" style="font-size:5vmin;width: fit-content;" >
+
+
+
+
+<div id="GameStats">
+
+Apasati butonul "Start" pentru a incepe jocul.
+<br>
+Greseli:0
+<br>
+
+</div>
+<button type="button"  id="quitbutton" onclick="iquit()" style="font-size:2vmin">Doresc sa renunt.</button>
+
+</div>
+
+
+<audio id="redAudio">
+  <source src="button1short.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="yellowAudio">
+  <source src="button2short.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="blueAudio">
+  <source src="button3short.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="greenAudio">
+  <source src="button4short.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="responseAudio">
+  <source src="responseButton.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+let series_length;
+let s;
+let currentSeries;
+let userResponse; // this is the variable with the user input
+let mistakes;
+let correctAnswers=0;
+function setDefaultParams()
+{
+	mistakes=0;
+	series_length=3;
+	s=
+	[ 
+		[" "," "," "," "," "," "," "," "," "," "],
+		["Verde"," "," "," "," "," "," "," "," "," "],
+		["Verde","Albastru"," "," "," "," "," "," "," "," "],
+		["Albastru","Galben","Rosu"," "," "," "," "," "," "," "],
+		["Verde","Verde","Rosu","Galben"," "," "," "," "," "],
+		["Rosu","Rosu","Galben","Albastru","Galben"," "," "," "," "],
+		["Verde","Albastru","Albastru","Verde","Rosu","Galben"," "," "," "," "],
+		["Verde","Galben","Rosu","Verde","Galben","Galben","Rosu"," "," "," "],
+		["Rosu","Verde","Rosu","Verde","Albastru","Galben","Rosu","Verde"," "," "],
+		["Rosu","Verde","Verde","Galben","Rosu","Albastru","Rosu","Galben","Albastru"," "],
+		["Rosu","Galben","Albastru","Verde","Rosu","Verde","Verde","Galben","Verde","Rosu"]
+	];
+	
+}
+
+function startAColorSeries(){
+
+	document.getElementById('CoolResponseButtons').style.display="none";
+	document.getElementById('responseButtonWrapper').style.display="none";
+	var cnt=0;
+	currentSeries=[" "," "," "," "];
+	//var series_length=document.getElementById('seriesNumber').value;
+	var intervalClearTime=series_length*3000+1000;
+	var interval;
+	for (let i = 0; i < series_length; i++) 
+	{
+		var x=s[series_length][i];
+		currentSeries[i]=x;
+	}
+	const timeout=setTimeout(() => {
+		document.getElementById(currentSeries[cnt++]).click();
+		interval=setInterval(() => {
+		document.getElementById(currentSeries[cnt++]).click();
+	}, 3000)
+	}, 1000)
+	
+	setTimeout(()=>{
+		document.getElementById('responseButtonWrapper').style.display="block";
+		clearInterval(interval);
+	}, intervalClearTime)
+}
+
+function displayResponseButtons()
+{
+	document.getElementById('CoolResponseButtons').style.display="grid";
+	document.getElementById('responseButtonWrapper').style.display="none";
+	userResponse=[];
+	
+}
+
+function refreshButton(){
+	location.reload();
+}
+
+function RedButtonPressed(){
+
+	document.getElementById("Rosu").style.backgroundColor="#ff0000";
+	var redSound = document.getElementById("redAudio"); 
+	setTimeout(()=>{
+	redSound.play();
+	},300)
+	setTimeout(() => {
+		document.getElementById("Rosu").style.backgroundColor="#660000";
+	}, 1500)
+}
+
+function YellowButtonPressed(){
+
+	document.getElementById("Galben").style.backgroundColor="#ffff00";
+	var yellowSound = document.getElementById("yellowAudio");
+	setTimeout(()=>{
+	yellowSound.play();
+	},300)	
+	setTimeout(() => {
+		document.getElementById("Galben").style.backgroundColor="#666600";
+	}, 1500)
+}
+
+function GreenButtonPressed(){
+	document.getElementById("Verde").style.backgroundColor="#00ff00";
+	var greenSound = document.getElementById("greenAudio"); 
+	setTimeout(()=>{
+	greenSound.play();
+	},300)	
+	setTimeout(() => {
+		document.getElementById("Verde").style.backgroundColor="#006600";
+	}, 1500)
+}
+
+function BlueButtonPressed(){
+	document.getElementById('Albastru').style.backgroundColor="#0000ff";
+	var blueSound = document.getElementById("blueAudio"); 
+	setTimeout(()=>{
+	blueSound.play();
+	},300)	
+	setTimeout(() => {
+		document.getElementById("Albastru").style.backgroundColor="#000066";
+	}, 1500)
+}
+function RedResponsePressed()
+{
+	userResponse.push("Rosu");
+	console.log("Rosu");
+	document.getElementById("r_red").style.backgroundColor="#ff0000";
+	var sound = document.getElementById("responseAudio"); 
+	sound.pause();	
+	sound.currentTime = 0;
+	sound.play();
+	setTimeout(() => {
+		document.getElementById("r_red").style.backgroundColor="#660000";
+	}, 300)
+	if(userResponse.length==series_length)
+		checkUserAnswer();
+}
+
+function YellowResponsePressed()
+{
+	userResponse.push("Galben");
+	console.log("Galben");
+	document.getElementById("r_yellow").style.backgroundColor="#ffff00";
+	var sound = document.getElementById("responseAudio"); 
+	sound.pause();	
+	sound.currentTime = 0;
+	sound.play();
+	setTimeout(() => {
+		document.getElementById("r_yellow").style.backgroundColor="#666600";
+	}, 300)
+	if(userResponse.length==series_length)
+		checkUserAnswer();
+	/*
+	for(let i=series_length-1;i<series_length;i++)
+	userResponse[i]=" ";
+	for(let i=0;i<series_length;i++)
+		{
+			console.log(userResponse[i]);
+			if(userResponse[i]!=currentSeries[i])
+			equalArrays=0;
+		}
+		if(equalArrays==1)
+		alert("Raspuns corect");
+		else
+		alert("Raspuns gresit");
+	*/
+	
+}
+
+function GreenResponsePressed()
+{
+	userResponse.push("Verde");
+	console.log("Verde");
+	document.getElementById("r_green").style.backgroundColor="#00ff00";
+	var sound = document.getElementById("responseAudio");
+	sound.pause();	
+	sound.currentTime = 0;
+	sound.play();
+	setTimeout(() => {
+		document.getElementById("r_green").style.backgroundColor="#006600";
+	}, 300)
+	if(userResponse.length==series_length)
+		checkUserAnswer();
+}
+
+function BlueResponsePressed()
+{
+	userResponse.push("Albastru");
+	console.log("Albastru");
+	document.getElementById('r_blue').style.backgroundColor="#0000ff";
+	var sound = document.getElementById("responseAudio"); 
+	sound.pause();	
+	sound.currentTime = 0;
+	sound.play();
+	setTimeout(() => {
+		document.getElementById("r_blue").style.backgroundColor="#000066";
+	}, 300)
+	if(userResponse.length==series_length)
+		checkUserAnswer();
+}
+
+function checkUserAnswer()
+{
+	let ok=1;
+	document.getElementById('CoolResponseButtons').style.display="none";
+	for(let i=0;i<series_length;i++)
+		if(userResponse[i]!=currentSeries[i])
+			ok=0;
+	if(ok==0)
+		{
+			alert("Raspunsul dat a fost gresit");
+			mistakes++;
+			document.getElementById('GameStats').innerHTML="Seria curenta:"+series_length;
+			document.getElementById('GameStats').innerHTML+="<br>";
+			document.getElementById('GameStats').innerHTML+="Greseli:"+mistakes;
+		}
+	else
+		{
+			alert("Raspunsul dat a fost corect");
+			series_length++;
+			correctAnswers++;
+			document.getElementById('GameStats').innerHTML="Seria curenta:"+series_length;
+			document.getElementById('GameStats').innerHTML+="<br>";
+			document.getElementById('GameStats').innerHTML+="Greseli:"+mistakes;
+			if(series_length==11)
+			{
+				displayEndScreen();
+			}
+		}
+}
+function displayEndScreen()
+{
+document.getElementById('CoolResponseButtons').style.display="none";
+				document.getElementById('responseButtonWrapper').style.display="none";
+				document.getElementById('CoolButtons').style.display="none";
+				document.body.innerHTML=" ";
+				let finaldiv=document.createElement("div");
+				finaldiv.setAttribute("id","finaldiv");
+				let finalcontent=document.createTextNode("A-ti raspuns corect la toate seriile.");
+				let congrats=document.createTextNode("Felicitari!");
+				let br=document.createElement("br");
+				let br2=document.createElement("br");
+				let mistakescount=document.createTextNode("Greseli:"+mistakes);
+				finaldiv.appendChild(congrats);
+				finaldiv.appendChild(br2);
+				finaldiv.appendChild(finalcontent);
+				finaldiv.appendChild(br);
+				finaldiv.appendChild(mistakescount);
+				let pyro=document.createElement("div");
+				pyro.setAttribute("class","pyro");
+				let before=document.createElement("div");
+				before.setAttribute("class","before");
+				let after=document.createElement("div");
+				after.setAttribute("class","after");
+				pyro.appendChild(before);
+				pyro.appendChild(after);
+				document.body.appendChild(finaldiv);
+				document.body.appendChild(pyro);
+}
+function iquit()
+{	
+	document.getElementById('CoolResponseButtons').style.display="none";
+	document.getElementById('responseButtonWrapper').style.display="none";
+	document.getElementById('CoolButtons').style.display="none";
+	document.body.innerHTML=" ";
+	let finaldiv=document.createElement("div");
+	finaldiv.setAttribute("id","finaldiv");
+	let finalcontent=document.createTextNode("A-ti raspuns corect la "+correctAnswers+" serii.");
+	let br=document.createElement("br");
+	let mistakescount=document.createTextNode("Greseli:"+mistakes);
+	finaldiv.appendChild(finalcontent);
+	finaldiv.appendChild(br);
+	finaldiv.appendChild(mistakescount);
+	document.body.appendChild(finaldiv);
+	
+	
+}
+
+</script>
+
+
+
+
+</body>
+
+</html>
