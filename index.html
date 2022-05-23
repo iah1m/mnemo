@@ -716,7 +716,7 @@ document.getElementById('CoolResponseButtons').style.display="none";
 				timeSpent = new Date(endTime).getTime()-new Date(startTime).getTime();
 				let time=document.createElement("div");
 				var minutes=timeSpent/60000;
-				let time_spent=document.createTextNode("Timp:"+minutes+"minute");
+				let time_spent=document.createTextNode("Timp:"+minutes+" minute");
 				time.appendChild(time_spent);
 				finaldiv.appendChild(time);
 				
