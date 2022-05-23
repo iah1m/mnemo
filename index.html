@@ -483,7 +483,11 @@ function setDefaultParams()
 }
 
 function startAColorSeries(){
-
+	if(correctAnswers==0)
+	{
+	startTime=new Date();
+	console.log("Start time is:"+startTime);
+	}
 	if(correctAnswers==0)
 	{
 	startTime=new Date();
