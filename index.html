@@ -3,9 +3,9 @@
 
 <head>
 
-<title>Many Buttons</title>
+<title>Mnemo</title>
   <meta charset="UTF-8">
-  <meta name="description" content="Very many buttons">
+  <meta name="description" content="Mnemo">
   <meta name="author" content="Flanja Cosmin-Mihai">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
@@ -507,11 +507,12 @@ function startAColorSeries(){
 }
 
 function displayResponseButtons()
-{
-	document.getElementById('CoolResponseButtons').style.display="grid";
+{	
 	document.getElementById('responseButtonWrapper').style.display="none";
 	userResponse=[];
-	
+	setTimeout(()=>{
+		document.getElementById('CoolResponseButtons').style.display="grid";
+	}, 300)
 }
 
 function refreshButton(){
