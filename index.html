@@ -699,9 +699,17 @@ document.getElementById('CoolResponseButtons').style.display="none";
 				pyro.appendChild(after);
 				document.body.appendChild(finaldiv);
 				document.body.appendChild(pyro);
+				let finalaudio=document.createElement("audio");
+				finalaudio.id = 'finalaudio';
+				finalaudio.src = 'victorytrumpet.mp3';
+				finalaudio.type= 'audio/mpeg';
+				document.body.appendChild(finalaudio);
+				finalaudio.play();
 }
+
 function iquit()
 {	
+	
 	document.getElementById('CoolResponseButtons').style.display="none";
 	document.getElementById('responseButtonWrapper').style.display="none";
 	document.getElementById('CoolButtons').style.display="none";
@@ -715,6 +723,8 @@ function iquit()
 	finaldiv.appendChild(br);
 	finaldiv.appendChild(mistakescount);
 	document.body.appendChild(finaldiv);
+	
+	
 	
 	
 }
