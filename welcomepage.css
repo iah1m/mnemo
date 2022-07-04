@@ -7,10 +7,14 @@
 		font-size:5vmin;
 		margin: 0;
 		position: absolute;
-		top: 20%;
+		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		font-size:3vmin;
+		min-width:50vmin;
+		max-width:50vmin;
+		max-height:30vmin;
+		min-height:30vmin;
 	}
 	
 	#usernameInput
