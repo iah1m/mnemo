@@ -337,7 +337,7 @@ function startAColorSeries(){
 	var cnt=0;
 	currentSeries=[" "," "," "," "];
 	//var series_length=document.getElementById('seriesNumber').value;
-	var intervalClearTime=series_length*3000+1000;
+	var intervalClearTime=series_length*4000+1000;
 	var interval;
 	if(static_flag==1)
 	for (let i = 0; i < series_length; i++) 
@@ -355,7 +355,7 @@ function startAColorSeries(){
 		document.getElementById(currentSeries[cnt++]).click();
 		interval=setInterval(() => {
 		document.getElementById(currentSeries[cnt++]).click();
-	}, 3000)
+	}, 4000)
 	}, 1000)
 	
 	setTimeout(()=>{
@@ -386,7 +386,7 @@ function RedButtonPressed(){
 	},300)
 	setTimeout(() => {
 		document.getElementById("Rosu").style.backgroundColor="#660000";
-	}, 1500)
+	}, 2500)
 }
 
 function YellowButtonPressed(){
@@ -398,7 +398,7 @@ function YellowButtonPressed(){
 	},300)	
 	setTimeout(() => {
 		document.getElementById("Galben").style.backgroundColor="#666600";
-	}, 1500)
+	}, 2500)
 }
 
 function GreenButtonPressed(){
@@ -409,7 +409,7 @@ function GreenButtonPressed(){
 	},300)	
 	setTimeout(() => {
 		document.getElementById("Verde").style.backgroundColor="#006600";
-	}, 1500)
+	}, 2500)
 }
 
 function BlueButtonPressed(){
@@ -420,7 +420,7 @@ function BlueButtonPressed(){
 	},300)	
 	setTimeout(() => {
 		document.getElementById("Albastru").style.backgroundColor="#000066";
-	}, 1500)
+	}, 2500)
 }
 function RedResponsePressed()
 {
